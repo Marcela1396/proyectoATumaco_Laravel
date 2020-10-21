@@ -21,6 +21,6 @@
         </style>
     </head>
     <body class="antialiased">
-            <h1> HOLA COMPAÑEROS </h1>
+            <h1> PRINCIPAL SUPERMERCADO EL MÁS BARATO </h1>
     </body>
 </html>
