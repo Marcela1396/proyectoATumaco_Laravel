@@ -1,2 +1,2 @@
 
-<h1> Productos </h1>
+<h1> Productos del Supermercado </h1>
