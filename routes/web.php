@@ -17,16 +17,14 @@ Route::get('/', function () {
     return view('main');
 });
 
-Route::get('productos', function () {
-    return view('productos');
-});
-
 Route::get('clientes', function () {
     return view('clientes.clientela');
 });
 
 Route::get('clientes/visualizar', function () {
-    return view('clientes.listado');
+    return view('clientes.listado', array('id'=>'1', 
+                                          'nombre' => 'Jesus Garcia', 
+                                          'edad' => 23));
 });
 
 Route::get('ofertas', function () {
@@ -59,15 +57,26 @@ Route::get('productos/{id}', function ($id){
     return "El producto Nº {$id}";
 })->where('id','[0-9]+');
 
+/*
+Opcion #1 empleando la funcion array
+Route::get('inventario/{id}', function ($id) {
+    return view('productos.productos', array('identificador' => $id ));
+});
+*/
+
+// Opción 2 : Empleando la funcion with de Laravel
+Route::get('inventario/{id}', function ($id) {
+    return view('productos.productos')
+    ->with('identificador', $id )
+    ->with('nombre', 'Leche Deslactosada');
+});
+
+
 // Parametros opcionales
 
 Route::get('clientes/{nombre}/{apellido?}', function ($nombre, $apellido = null) {
-
-    if($apellido){
-        return "Cliente cuyo nombre es: {$nombre} y cuyo apellido es {$apellido}";
-    }
-    else{
-        return "Cliente cuyo nombre es: {$nombre} sin apellido";
-    }
+    return view('clientes.datos')
+    ->with('nombre', $nombre)
+    ->with('apellido',$apellido);
 });
 
