@@ -7,5 +7,5 @@
     <h2> Producto cuyo id es : <?php echo $identificador ?> </h2>
 
     <h2> Descripción : <?php echo $nombre ?> </h2>
-@endsection
+@stop
 
