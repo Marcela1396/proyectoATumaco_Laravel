@@ -9,9 +9,23 @@ class Cliente extends Controller
 {
     //
     public function index(){
-        return view('clientes.listado', array('id'=>'1', 
-                                          'nombre' => 'Jesus Garcia', 
-                                          'edad' => 23));
+        $clientes =[
+            array('id'=> '1', 'nombre' => 'Mariana Suarez', 'edad'=> 24),
+            array('id'=> '2', 'nombre' => 'Lourdes Perez', 'edad'=> 31),
+            array('id'=> '3', 'nombre' => 'Jesus Benavides', 'edad'=> 45),
+            array('id'=> '4', 'nombre' => 'Nicolas Burbano', 'edad'=> 12)
+
+        ];
+        return view('clientes.listado', compact('clientes'));
+    }
+
+    public function detalle($id,$nombre,$edad){
+        return view('clientes.detalle', array(
+            'id' => $id,
+            'nombre' => $nombre,
+            'edad' => $edad
+            )
+        );
     }
 
     public function fieles(){

@@ -24,7 +24,9 @@ Route::get('descripcion', [Administracion::class, 'descripcion'] );
 
 //Seccion Clientes
     
-Route::get('clientes/visualizar', [Cliente::class, 'index'] );
+Route::get('clientes/visualizar', [Cliente::class, 'index'] )->name('listadoCli');
+
+Route::get('clientes/visualizar/{id}/{nombre}/{edad}', [Cliente::class, 'detalle']);
 
 Route::get('clientes/fieles' , [Cliente::class, 'fieles'] );
 

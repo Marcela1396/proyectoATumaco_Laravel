@@ -2,11 +2,15 @@
 @section('contenido')
 	
 <h1> Listado de Clientes </h1>
+    <ul>
+        @foreach($clientes as $c)
+        <li>
+           <h2> {{ $c['nombre'] }} 
+            <a href='{{ url("clientes/visualizar/$c[id]/$c[nombre]/$c[edad]") }}'> Ver detalles </a>
+           </h2>
+        </li>
+        @endforeach
 
-<h2> Identificador <?php echo $id ?> </h2>
-<h2> Nombre <?php echo $nombre ?> </h2>
-<h2> Edad <?php echo $edad ?> </h2>
-
-
+    </ul>
 
 @stop
