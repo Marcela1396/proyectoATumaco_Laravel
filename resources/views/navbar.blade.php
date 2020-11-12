@@ -14,9 +14,10 @@
                 Clientes
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="{{ url('/clientes/visualizar')}}">General</a>
-                <a class="dropdown-item" href="{{ url('/clientes/fieles')}}">Fieles</a>
-                <a class="dropdown-item" href="{{ url('/clientes/maria/suarez')}}">Antiguos</a>
+                    <a class="dropdown-item" href="{{ url('/clientes/visualizar')}}">General</a>
+                    <a class="dropdown-item" href="{{ url('/clientes/fieles')}}">Fieles</a>
+                    <a class="dropdown-item" href="{{ url('/clientes/maria/suarez')}}">Antiguos</a>
+                    <a class="dropdown-item" href="{{ url('/clientes/registrar')}}">Registro</a>
                 </div>
             </li>
 

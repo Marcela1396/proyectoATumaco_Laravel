@@ -30,7 +30,14 @@ Route::get('clientes/visualizar/{id}/{nombre}/{edad}', [Cliente::class, 'detalle
 
 Route::get('clientes/fieles' , [Cliente::class, 'fieles'] );
 
+Route::get('clientes/registrar', [Cliente::class, 'formularioReg'])->name('formularioRegistro');
+
+Route::post('clientes/registrar', [Cliente::class, 'registrar'])->name('registroCli'); 
+
+
 Route::get('clientes/{nombre}/{apellido?}', [Cliente::class, 'antiguos']);
+
+
 
 //Seccion Productos
 

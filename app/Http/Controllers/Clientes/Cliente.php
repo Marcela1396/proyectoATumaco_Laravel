@@ -65,6 +65,14 @@ class Cliente extends Controller
         ->with('apellido',$apellido);
     }
 
+    public function formularioReg(){
+        return view('clientes.formulario');
+    }
+
+    public function registrar(){
+        return view('clientes.mensaje');
+    }
+
 
 
 }
