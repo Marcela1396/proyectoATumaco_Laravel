@@ -15,6 +15,15 @@ class CreateProductosTable extends Migration
     {
         Schema::create('productos', function (Blueprint $table) {
             $table->id();
+            $table->string('nombreProducto', 45); // Varchar
+            $table->integer('cantidadProducto'); // Entero
+            $table->float('precioProducto');   // Flotante
+            $table->string('fotoProducto', 100);   // Varchar 100
+            $table->bigInteger('categoria')->unsigned();
+            $table->foreign('categoria')  //Creación de la llave foranea
+                  ->references('id')  // Referencia al atributo
+                  ->on('categorias')  // De que tabla
+                  ->onDelete('cascade');
             $table->timestamps();
         });
     }

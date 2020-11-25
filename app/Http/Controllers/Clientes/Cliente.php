@@ -60,7 +60,7 @@ class Cliente extends Controller
     }
 
     public function antiguos($nombre, $apellido = null){
-        return view('clientes.datos')
+        return view('clientes.antiguos')
         ->with('nombre', $nombre)
         ->with('apellido',$apellido);
     }

@@ -18,17 +18,16 @@
             <input type="text" class="form-control" id='nombre' name='nombre' placeholder="Nombre" aria-label="Username" aria-describedby="basic-addon1" required>
         </div>
 
-        
+        <label for="apellido">Apellido </label>
         <div class="input-group mb-3">
-            <label for="apellido">Apellido </label>
             <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon1">@</span>
             </div>
             <input type="text" class="form-control" id='apellido' name='apellido' value={{$apellido}} placeholder="Apellido"  aria-describedby="basic-addon1">
         </div>
 
+        <label for="contraseña">Contraseña </label>
         <div class="input-group mb-3">
-            <label for="contraseña">Contraseña </label>
             <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon1">@</span>
             </div>

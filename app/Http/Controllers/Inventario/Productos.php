@@ -15,8 +15,8 @@ class Productos extends Controller
         return view('productos.ofertas');
     }
 
-    public function hogar(){
-        return view('productos.hogar');
+    public function categorias(){
+        return view('productos.categorias');
     }
 
 }

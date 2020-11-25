@@ -14,7 +14,9 @@ class CreateCategoriasTable extends Migration
     public function up()
     {
         Schema::create('categorias', function (Blueprint $table) {
-            $table->id();
+            $table->id();  // Llave primaria, de tipo Big Integer, atributo unico y autoincremental
+            $table->string('nombreCategoria', 20); // Atributo de tipo varchar 20
+            $table->string('descripcion', 45); // Atributo de tipo varchar 45
             $table->timestamps();
         });
     }

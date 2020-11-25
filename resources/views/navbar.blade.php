@@ -28,7 +28,7 @@
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                 <a class="dropdown-item" href="{{ url('/productos/listado')}}">General</a>
                 <a class="dropdown-item" href="{{ url('/productos/ofertas')}}">Ofertas del dia</a>
-                <a class="dropdown-item" href="{{ url('/productos/hogar')}}">Hogar</a>
+                <a class="dropdown-item" href="{{ url('/productos/categorias')}}">Categorias</a>
                 </div>
             </li>
         </ul>

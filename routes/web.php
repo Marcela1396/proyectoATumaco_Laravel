@@ -45,7 +45,7 @@ Route::get('productos/listado', [Productos::class, 'index']);
 
 Route::get('productos/ofertas', [Productos::class, 'ofertas'] );
 
-Route::get('productos/hogar', [Productos::class, 'hogar'] );
+Route::get('productos/categorias', [Productos::class, 'categorias'] );
 
 
 // Ejemplos rutas
