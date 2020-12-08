@@ -69,12 +69,22 @@ class Productos extends Controller
 
     }
 
-    public function ofertas(){
-        return view('productos.ofertas');
+    public function formularioReg(){
+        return view('productos.form_registro');
     }
 
-    public function categorias(){
-        return view('productos.categorias');
+    public function registrar(){
+        return view('productos.form_registro');
     }
+
+    public function actualizar(){
+        return view('productos.form_actualiza');
+    }
+
+    public function eliminar(){
+       return view('productos.eliminar'); 
+    }
+
+  
 
 }

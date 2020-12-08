@@ -14,7 +14,7 @@ class ProductosSeeder extends Seeder
      */
     public function run()
     {
-        //
+    
         $productos = [
             [
                 'nombreProducto'=> 'Limpido Clorox',
@@ -64,7 +64,8 @@ class ProductosSeeder extends Seeder
             ] 
         ];
         DB::table('productos')->insert($productos);
-
+    
+    //DB::table('productos')->truncate();
     
     }
 }
