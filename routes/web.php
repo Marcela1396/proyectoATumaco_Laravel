@@ -25,29 +25,34 @@ Route::get('descripcion', [Administracion::class, 'descripcion'] );
 
 //Seccion Clientes
     
-Route::get('clientes/visualizar', [Cliente::class, 'index'] )->name('listadoCli');
+Route::get('clientes', [Cliente::class, 'index'])->name('listadoClientes');
+
+Route::get('clientes/registrar', [Cliente::class, 'formularioReg'])->name('form_registroCliente');
+
+Route::post('clientes/registrar', [Cliente::class, 'registrar'])->name('registrarCliente'); 
+
+Route::get('clientes/actualizar', [Cliente::class, 'actualizar'])->name('actualizarCliente');
+
+Route::get('clientes/eliminar', [Cliente::class, 'eliminar'])->name('eliminarCliente');
+
 
 Route::get('clientes/visualizar/{id}/{nombre}/{edad}', [Cliente::class, 'detalle']);
 
 Route::get('clientes/fieles' , [Cliente::class, 'fieles'] );
 
-Route::get('clientes/registrar', [Cliente::class, 'formularioReg'])->name('formularioRegistro');
-
-Route::post('clientes/registrar', [Cliente::class, 'registrar'])->name('registroCli'); 
-
-
 Route::get('clientes/{nombre}/{apellido?}', [Cliente::class, 'antiguos']);
+
 
 
 
 //Seccion Productos
 
-Route::get('productos/listado', [Productos::class, 'index']);
+Route::get('productos', [Productos::class, 'index'])->name('listadoProductos');
 
 
-Route::get('productos/registro', [Productos::class , 'formularioReg'])->name('registrarProducto');
+Route::get('productos/registro', [Productos::class , 'formularioReg'])->name('form_registroProducto');
 
-Route::post('productos/registro', [Productos::class , 'registrar'])->name('Producto_registrado');
+Route::post('productos/registro', [Productos::class , 'registrar'])->name('registrarProducto');
 
 
 Route::get('productos/actualizar', [Productos::class, 'actualizar'])->name('actualizarProducto');
@@ -57,9 +62,11 @@ Route::get('productos/eliminar', [Productos::class, 'eliminar'])->name('eliminar
 
 //Seccion Categorias
 
-Route::get('categorias', [Categorias::class, 'index'] );
+Route::get('categorias', [Categorias::class, 'index'] )->name('listadoCategorias');
 
-Route::get('categorias/registro', [Categorias::class, 'registrar'])->name('registrarCategoria');
+Route::get('categorias/registro', [Categorias::class, 'formularioReg'])->name('form_registroCategoria');
+
+Route::post('categorias/registro', [Categorias::class, 'registrar'])->name('registrarCategoria');
 
 Route::get('categorias/actualizar', [Categorias::class, 'actualizar'])->name('actualizarCategoria');
 

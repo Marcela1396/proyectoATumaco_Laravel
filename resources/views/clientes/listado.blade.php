@@ -5,9 +5,7 @@
     <ul>
         @foreach($clientes as $c)
         <li>
-           <h2> {{ $c['nombre'] }} 
-            <a href='{{ url("clientes/visualizar/$c[id]/$c[nombre]/$c[edad]") }}'> Ver detalles </a>
-           </h2>
+           <h2> {{ $c['nombre'] }}   </h2>
         </li>
         @endforeach
 

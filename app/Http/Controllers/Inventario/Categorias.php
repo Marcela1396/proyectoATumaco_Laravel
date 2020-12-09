@@ -15,6 +15,10 @@ class Categorias extends Controller
         return view('categorias.listado',['categorias' => $categorias] );
     }
 
+    public function formularioReg(){
+        return view('categorias.form_registro') ;
+    }
+
     public function registrar()
     {
         return view('categorias.form_registro');

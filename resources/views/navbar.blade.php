@@ -14,8 +14,11 @@
                 Clientes
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="{{ url('/clientes/visualizar')}}">General</a>
-                    <a class="dropdown-item" href="{{ url('/clientes/registrar')}}">Registro</a>
+                    <a class="dropdown-item" href="{{ url('/clientes')}}">Listado</a>
+                    <hr>                
+                    <a class="dropdown-item" href="{{ route('form_registroCliente') }}">Registro</a>
+                    <a class="dropdown-item" href="{{ route('actualizarCliente') }}">Actualizar</a>
+                    <a class="dropdown-item" href="{{ route('eliminarCliente') }}">Eliminar</a>
                 </div>
             </li>
 
@@ -24,10 +27,10 @@
                 Productos
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="{{ url('/productos/listado')}}">General</a>
+                <a class="dropdown-item" href="{{ url('/productos')}}">Listado</a>
 
                 <hr>                
-                <a class="dropdown-item" href="{{ route('registrarProducto') }}">Registro</a>
+                <a class="dropdown-item" href="{{ route('form_registroProducto') }}">Registro</a>
                 <a class="dropdown-item" href="{{ route('actualizarProducto') }}">Actualizar</a>
                 <a class="dropdown-item" href="{{ route('eliminarProducto') }}">Eliminar</a>
                 </div>
@@ -38,9 +41,9 @@
                 Categorias
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="{{ url('/categorias') }}">General</a>
+                    <a class="dropdown-item" href="{{ url('/categorias') }}">Listado</a>
                     <hr>
-                    <a class="dropdown-item" href="{{ route('registrarCategoria') }}">Registro</a>
+                    <a class="dropdown-item" href="{{ route('form_registroCategoria') }}">Registro</a>
                     <a class="dropdown-item" href="{{ route('actualizarCategoria') }}">Actualizar</a>
                     <a class="dropdown-item" href="{{ route('eliminarCategoria') }}">Eliminar</a>
                 </div>

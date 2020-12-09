@@ -19,6 +19,22 @@ class Cliente extends Controller
         return view('clientes.listado', compact('clientes'));
     }
 
+    public function formularioReg(){
+        return view('clientes.form_registro') ;
+    }
+
+    public function registrar(){
+        return view('clientes.form_registro') ;
+    }
+
+    public function actualizar(){
+        return view('clientes.form_actualiza') ;
+    }
+
+    public function eliminar(){
+        return view('clientes.eliminar') ;
+    }
+
     public function detalle($id,$nombre,$edad){
         return view('clientes.detalle', array(
             'id' => $id,
@@ -65,13 +81,6 @@ class Cliente extends Controller
         ->with('apellido',$apellido);
     }
 
-    public function formularioReg(){
-        return view('clientes.formulario');
-    }
-
-    public function registrar(){
-        return view('clientes.mensaje');
-    }
 
 
 
