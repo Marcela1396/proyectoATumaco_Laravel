@@ -31,8 +31,7 @@
 
                 <hr>                
                 <a class="dropdown-item" href="{{ route('form_registroProducto') }}">Registro</a>
-                <a class="dropdown-item" href="{{ route('actualizarProducto') }}">Actualizar</a>
-                <a class="dropdown-item" href="{{ route('eliminarProducto') }}">Eliminar</a>
+                <a class="dropdown-item" href="{{ route('form_consulta') }}">Consultar</a>
                 </div>
             </li>
 
