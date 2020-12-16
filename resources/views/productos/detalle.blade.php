@@ -10,8 +10,11 @@
                     <h5 class="card-title"> {{ $producto->nombreProducto }} </h5>
                     <p class="card-text"> Identificador :  {{ $producto->id }} </p>
                     <p class="card-text"> Precio :  {{ $producto->precioProducto }} </p>
+                    <p class="card-text"> Categoria :  {{ $producto->category->nombreCategoria }} </p>
                     <p class="card-text"> Cantidad :  {{ $producto->cantidadProducto}} </p>
-                    <p class="card-text"> Categoria :  {{ $producto->categoria }} </p>
+                    @if($producto->stock())
+                        <p class="card-text"> Ultimas Unidades Disponibles </p>
+                    @endif
                 
                     <a href="{{route('form_actualizaProducto', $producto->id)}}" class="btn btn-success"> Editar </a>
                     <a href="{{route('eliminarProducto', $producto->id)}}" class="btn btn-danger"> Eliminar </a>
