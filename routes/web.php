@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Administracion;
-use App\Http\Controllers\Clientes\Cliente;
+use App\Http\Controllers\Clientes;
 use App\Http\Controllers\Inventario\Productos;
 use App\Http\Controllers\Inventario\Categorias;
 
@@ -23,27 +23,26 @@ Route::get('administracion', [Administracion::class, 'usuarios']);
 
 Route::get('descripcion', [Administracion::class, 'descripcion'] );
 
-//Seccion Clientes
-    
-Route::get('clientes', [Cliente::class, 'index'])->name('listadoClientes');
-
-Route::get('clientes/registrar', [Cliente::class, 'formularioReg'])->name('form_registroCliente');
-
-Route::post('clientes/registrar', [Cliente::class, 'registrar'])->name('registrarCliente'); 
-
-Route::get('clientes/actualizar', [Cliente::class, 'actualizar'])->name('actualizarCliente');
-
-Route::get('clientes/eliminar', [Cliente::class, 'eliminar'])->name('eliminarCliente');
+// Clientes *********************************************************
 
 
-Route::get('clientes/visualizar/{id}/{nombre}/{edad}', [Cliente::class, 'detalle']);
+Route::get('clientes/registrar', [Clientes::class, 'form_registro'])
+	->name('form_registroCli');
 
-Route::get('clientes/fieles' , [Cliente::class, 'fieles'] );
+Route::post('clientes/registrar', [Clientes::class, 'registrar'])
+	->name('registrar_cliente');
 
-Route::get('clientes/{nombre}/{apellido?}', [Cliente::class, 'antiguos']);
+Route::get('clientes/actualizar/{id}', [Clientes::class, 'form_actualiza'])
+	->name('form_actualizaCli');
 
+Route::post('clientes/actualizar/{id}', [Clientes::class, 'actualizar'])
+	->name('actualiza_cliente');
 
+Route::get('clientes/eliminar/{id}', [Clientes::class, 'eliminar'])
+	->name('elimina_Cliente');
 
+Route::get('clientes', [Clientes::class, 'index'])
+	->name('listado_clientes');
 
 //Seccion Productos
 
@@ -71,15 +70,25 @@ Route::post('productos/consulta', [Productos::class, 'consultar'])->name('consul
 
 //Seccion Categorias
 
-Route::get('categorias', [Categorias::class, 'index'] )->name('listadoCategorias');
+Route::get('categorias', [Categorias::class, 'index'] )
+->name('listado_categorias');
 
-Route::get('categorias/registro', [Categorias::class, 'formularioReg'])->name('form_registroCategoria');
+Route::get('categorias/registro', [Categorias::class, 'form_registro'])
+->name('form_registroCategoria');
 
-Route::post('categorias/registro', [Categorias::class, 'registrar'])->name('registrarCategoria');
+Route::post('categorias/registro', [Categorias::class, 'registrar'])
+->name('registrarCategoria');
 
-Route::get('categorias/actualizar', [Categorias::class, 'actualizar'])->name('actualizarCategoria');
+Route::get('categorias/actualizar/{id}', [Categorias::class, 'form_actualiza'])
+->name('form_actualizaCategoria');
 
-Route::get('categorias/eliminar', [Categorias::class, 'eliminar'])->name('eliminarCategoria');
+Route::post('categorias/actualizar/{id}', [Categorias::class, 'actualizar'])
+->name('actualizarCategoria');
+
+Route::get('categorias/eliminar/{id}', [Categorias::class, 'eliminar'])
+->name('eliminarCategoria');
+
+
 
 
 // Ejemplos rutas

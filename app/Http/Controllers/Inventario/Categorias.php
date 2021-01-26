@@ -18,7 +18,7 @@ class Categorias extends Controller
         return view('categorias.listado',['categorias' => $categorias] );
     }
 
-    public function formularioReg(){
+    public function form_registro(){
         return view('categorias.form_registro') ;
     }
 
@@ -29,16 +29,28 @@ class Categorias extends Controller
         $category->nombreCategoria = $request->input('nombreCat');
         $category->descripcion  = $request->input('descripcionCat');
         $category->save();
-        return redirect()->route('listadoCategorias');   
+        return redirect()->route('listado_categorias');   
     }
 
-    public function actualizar()
-    {
-        return view('categorias.form_actualiza');
+    public function form_actualiza($id){
+        // Funcion que genera el formulario de actualizacion con base en la categoria seleccionada
+        $categoria = Categoria::findOrFail($id);
+        return view ('categorias.form_actualiza', compact('categoria'));
     }
 
-    public function eliminar()
+    public function actualizar(Request $request, $id)
     {
-        return view('categorias.eliminar');
+        $c = Categoria::findOrFail($id);
+        $c->nombreCategoria = $request->input('nombreCat');
+        $c->descripcion = $request->input('descripcionCat');
+        $c->save();
+        return redirect()->route('listado_categorias');  
+    }
+
+    public function eliminar($id)
+    {
+        $c = Categoria::findOrFail($id);
+        $c->delete();
+        return redirect()->route('listado_categorias');
     }
 }
