@@ -7,6 +7,11 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Categoria; 
 
+use App\Exports\CategoriasExport;
+use Maatwebsite\Excel\Facades\Excel;
+
+use Barryvdh\DomPDF\Facade as PDF;
+
 class Categorias extends Controller
 {
     public function index(){
@@ -52,5 +57,43 @@ class Categorias extends Controller
         $c = Categoria::findOrFail($id);
         $c->delete();
         return redirect()->route('listado_categorias');
+    }
+
+    public function exportarExcel(){
+        return Excel::download(new CategoriasExport, 'categorias.xlsx');  
+    }
+
+    public function descargarPDF(){
+        $categorias = Categoria::all();
+        $pdf = \PDF::loadView('categorias.reportePDF', ['categorias' => $categorias]);
+        return $pdf->download('categorias.pdf');
+    }
+
+    public function recibirDatos(Request $request){
+        /* Recibir datos de la API (Json)
+        $nombre = $request->input('nombre');
+        $descripcion  = $request->input('descripcion');
+        $resultado = "Categoria: $nombre , Descripcion: $descripcion";
+        */
+        $category = new Categoria();
+        $category->nombreCategoria = $request->input('nombre');
+        $category->descripcion = $request->input('descripcion');
+        if($category->save()){
+            $resultado = 'Insertado';
+        }
+        
+
+        return json_encode(array(
+            'status' => 200,
+            'response' => array(
+                'mensaje' => $resultado
+            )
+        ));  
+    }
+
+    public function enviarDatos(){
+        $categorias = Categoria::all();
+            return response()->json($categorias); 
+
     }
 }

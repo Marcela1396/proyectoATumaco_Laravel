@@ -88,6 +88,12 @@ Route::post('categorias/actualizar/{id}', [Categorias::class, 'actualizar'])
 Route::get('categorias/eliminar/{id}', [Categorias::class, 'eliminar'])
 ->name('eliminarCategoria');
 
+Route::get('categorias/exportarExcel', [Categorias::class, 'exportarExcel'])
+->name('exportar_Excel');
+
+Route::get('categorias/descargarPDF', [Categorias::class, 'descargarPDF'])
+->name('descargar_PDF');
+
 
 
 
